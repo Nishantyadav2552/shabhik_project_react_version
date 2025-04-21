@@ -53,6 +53,9 @@ interviews_collection = db["interviews"]     # interview_id, title, questions[],
 sessions_collection = db["session"]          # active sessions
 interview_logs = db["interview_logs"]        # logs, scores etc.
 
+@app.route("/")
+def home():
+    return "Flask backend is running"
 
 @app.route("/login_candidate", methods=["POST"])
 def login_candidate():
