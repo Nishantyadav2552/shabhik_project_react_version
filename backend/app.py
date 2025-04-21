@@ -39,7 +39,7 @@ GCS_BUCKET_NAME = "interview-uploads"
 
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)  # Expires in 30 mins
 
-CORS(app, supports_credentials=True)
+CORS(app, supports_credentials=True, origins=["https://frontend-avsq.onrender.com/"])
 
 # 🔗 Connect Flask to MongoDB
 MONGO_URI = "mongodb+srv://123103054:TfUOHuLbpP5aONS6@cluster0.cssez.mongodb.net/interview_ai?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true"
