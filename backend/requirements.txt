@@ -1,0 +1,14 @@
+Flask
+Flask-SocketIO
+google-generativeai
+azure-cognitiveservices-speech
+pymongo
+bcrypt
+PyMuPDF
+opencv-python
+numpy
+mediapipe
+Pillow
+eventlet
+gunicorn
+google-cloud-storage
