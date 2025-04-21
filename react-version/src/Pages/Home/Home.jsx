@@ -50,7 +50,7 @@ const RegisterDialog = () => {
         if (role === "company") payload.sieve_key = sieve_key;
 
         try {
-            const res = await fetch("http://localhost:5000/register", {
+            const res = await fetch("https://aiinterviewer-d7c7.onrender.com/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",
@@ -124,7 +124,7 @@ const CandidateDialog = () => {
         const password = form.get("password");
     
         try {
-            const res = await fetch("http://localhost:5000/login_candidate", {
+            const res = await fetch("https://aiinterviewer-d7c7.onrender.com/login_candidate", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -179,7 +179,7 @@ const CompanyDialog = () => {
         const password = form.get("password");
 
         try {
-            const res = await fetch("http://localhost:5000/login_company", {
+            const res = await fetch("https://aiinterviewer-d7c7.onrender.com/login_company", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

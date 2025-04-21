@@ -10,7 +10,7 @@ function CompanyDashboard() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:5000/get_company_interviews", {
+        fetch("https://aiinterviewer-d7c7.onrender.com/get_company_interviews", {
             method: "GET",
             credentials: "include"
         })
@@ -26,7 +26,7 @@ function CompanyDashboard() {
 
     const handleEdit = async (interviewId) => {
         try {
-            const res = await fetch(`http://localhost:5000/load_interview_and_generate/${interviewId}`, {
+            const res = await fetch(`https://aiinterviewer-d7c7.onrender.com/load_interview_and_generate/${interviewId}`, {
                 method: "GET",
                 credentials: "include"
             });
@@ -45,7 +45,7 @@ function CompanyDashboard() {
 
     const handleCreateNew = async () => {
         try {
-            const res = await fetch("http://localhost:5000/create_interview", {
+            const res = await fetch("https://aiinterviewer-d7c7.onrender.com/create_interview", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

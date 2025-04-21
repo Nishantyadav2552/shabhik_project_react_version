@@ -39,7 +39,7 @@ export default function Interview() {
     useEffect(() => {
         const fetchInterviewData = async () => {
             try {
-                const res = await fetch("http://localhost:5000/get_current_interview_data", {
+                const res = await fetch("https://aiinterviewer-d7c7.onrender.com/get_current_interview_data", {
                     method: "GET",
                     credentials: "include"
                 });
@@ -65,7 +65,7 @@ export default function Interview() {
 
     const handleSaveQuestions = async () => {
         try {
-            const response = await fetch("http://localhost:5000/save_selected_questions", {
+            const response = await fetch("https://aiinterviewer-d7c7.onrender.com/save_selected_questions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -111,7 +111,7 @@ export default function Interview() {
         setLoading(true);
         setError("");
         try {
-            const response = await fetch("http://localhost:5000/generate_questions", {
+            const response = await fetch("https://aiinterviewer-d7c7.onrender.com/generate_questions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

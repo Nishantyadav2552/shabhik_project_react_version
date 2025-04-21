@@ -18,7 +18,7 @@ export default function Addqs() {
     }, []);
 
     const fetchGeneratedQuestions = async () => {
-        const res = await fetch("http://localhost:5000/load_interview/temp", {
+        const res = await fetch("https://aiinterviewer-d7c7.onrender.com/load_interview/temp", {
             method: "GET",
             credentials: "include"
         });
@@ -29,7 +29,7 @@ export default function Addqs() {
     };
 
     const fetchExistingQuestions = async () => {
-        const res = await fetch("http://localhost:5000/get_existing_questions", {
+        const res = await fetch("https://aiinterviewer-d7c7.onrender.com/get_existing_questions", {
             method: "GET",
             credentials: "include"
         });
@@ -73,7 +73,7 @@ export default function Addqs() {
 
     const saveQuestionToBackend = async (question) => {
         try {
-            const res = await fetch("http://localhost:5000/save_question", {
+            const res = await fetch("https://aiinterviewer-d7c7.onrender.com/save_question", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",

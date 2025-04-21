@@ -26,7 +26,7 @@ export default function CandidateDashboard() {
     useEffect(() => {
         const fetchDashboardData = async () => {
             try {
-                const res = await fetch("http://localhost:5000/candidate_dashboard_logs", {
+                const res = await fetch("https://aiinterviewer-d7c7.onrender.com/candidate_dashboard_logs", {
                     method: "GET",
                     credentials: "include"
                 });
@@ -50,7 +50,7 @@ export default function CandidateDashboard() {
         // inside useEffect:
         const fetchCandidateName = async () => {
             try {
-                const res = await fetch("http://localhost:5000/get_candidate_name", {
+                const res = await fetch("https://aiinterviewer-d7c7.onrender.com/get_candidate_name", {
                     method: "GET",
                     credentials: "include",
                 });
@@ -66,7 +66,7 @@ export default function CandidateDashboard() {
 
         const fetchAvailableInterviews = async () => {
             try {
-                const res = await fetch("http://localhost:5000/get_all_interviews", {
+                const res = await fetch("https://aiinterviewer-d7c7.onrender.com/get_all_interviews", {
                     method: "GET",
                     credentials: "include"
                 });
@@ -86,7 +86,7 @@ export default function CandidateDashboard() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
-        const res = await fetch("http://localhost:5000/candidate_dashboard", {
+        const res = await fetch("https://aiinterviewer-d7c7.onrender.com/candidate_dashboard", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
@@ -108,7 +108,7 @@ export default function CandidateDashboard() {
     
         try {
             // Fetch Q&A logs
-            const logsRes = await fetch("http://localhost:5000/get_feedback", {
+            const logsRes = await fetch("https://aiinterviewer-d7c7.onrender.com/get_feedback", {
                 method: "GET",
                 credentials: "include"
             });
@@ -122,7 +122,7 @@ export default function CandidateDashboard() {
             setInterviewLogs(logs);
     
             // Fetch final score
-            const scoreRes = await fetch("http://localhost:5000/evaluate_response", {
+            const scoreRes = await fetch("https://aiinterviewer-d7c7.onrender.com/evaluate_response", {
                 method: "GET",
                 credentials: "include"
             });
@@ -137,7 +137,7 @@ export default function CandidateDashboard() {
 
     const handleInterviewSelect = async (interview_id) => {
         setError('');
-        const res = await fetch("http://localhost:5000/candidate_dashboard", {
+        const res = await fetch("https://aiinterviewer-d7c7.onrender.com/candidate_dashboard", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

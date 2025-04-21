@@ -289,7 +289,7 @@ function stopScreenRecording() {
       const formData = new FormData();
       formData.append("video", screenBlob, "screen_recording.webm");
 
-      const response = await fetch("http://localhost:5000/upload_video", {
+      const response = await fetch("https://aiinterviewer-d7c7.onrender.com/upload_video", {
         method: "POST",
         body: formData
       });
@@ -357,7 +357,7 @@ const InterviewPage = () => {
 
   const fetchFollowUpQuestion = async () => {
     try {
-      const res = await fetch("http://localhost:5000/generate_followup", {
+      const res = await fetch("https://aiinterviewer-d7c7.onrender.com/generate_followup", {
         method: "POST",
         credentials: "include"
       });
@@ -376,7 +376,7 @@ const InterviewPage = () => {
 
   const speakQuestion = async (text) => {
     try {
-      const res = await fetch("http://localhost:5000/text_to_speech", {
+      const res = await fetch("https://aiinterviewer-d7c7.onrender.com/text_to_speech", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
@@ -384,7 +384,7 @@ const InterviewPage = () => {
 
       const data = await res.json();
       if (data.audio_url) {
-        const audio = new Audio(`http://localhost:5000${data.audio_url}?t=${Date.now()}`);
+        const audio = new Audio(`https://aiinterviewer-d7c7.onrender.com${data.audio_url}?t=${Date.now()}`);
         setIsSpeaking(true); // ✅ Start speaking
         audio.play();
 
@@ -448,7 +448,7 @@ const InterviewPage = () => {
 
     const fetchFinalScore = async () => {
       try {
-        const res = await fetch("http://localhost:5000/evaluate_response", {
+        const res = await fetch("https://aiinterviewer-d7c7.onrender.com/evaluate_response", {
           method: "GET",
           credentials: "include",
         });
@@ -466,7 +466,7 @@ const InterviewPage = () => {
 
   const fetchFeedback = async () => {
     try {
-      const res = await fetch("http://localhost:5000/get_feedback", {
+      const res = await fetch("https://aiinterviewer-d7c7.onrender.com/get_feedback", {
         method: "GET",
         credentials: "include"
       });
@@ -480,7 +480,7 @@ const InterviewPage = () => {
 
   const sendFaceStatsToServer = async () => {
     try {
-      const res = await fetch("http://localhost:5000/save_face_stats", {
+      const res = await fetch("https://aiinterviewer-d7c7.onrender.com/save_face_stats", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -502,7 +502,7 @@ const InterviewPage = () => {
 
   const fetchNextQuestion = async () => {
     try {
-      const res = await fetch("http://localhost:5000/get_question", {
+      const res = await fetch("https://aiinterviewer-d7c7.onrender.com/get_question", {
         method: "GET",
         credentials: "include"
       });
@@ -530,7 +530,7 @@ const InterviewPage = () => {
   const startInterview = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/start_interview", {
+      const res = await fetch("https://aiinterviewer-d7c7.onrender.com/start_interview", {
         method: "POST",
         credentials: "include"
       });
@@ -558,7 +558,7 @@ const InterviewPage = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/submit_response", {
+      const res = await fetch("https://aiinterviewer-d7c7.onrender.com/submit_response", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -765,7 +765,7 @@ const InterviewPage = () => {
                       const formData = new FormData();
                       formData.append("video", screenBlob, "screen_recording.webm");
               
-                      const res = await fetch("http://localhost:5000/upload_video", {
+                      const res = await fetch("https://aiinterviewer-d7c7.onrender.com/upload_video", {
                         method: "POST",
                         body: formData,
                       });

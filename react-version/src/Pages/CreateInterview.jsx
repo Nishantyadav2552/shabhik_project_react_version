@@ -23,7 +23,7 @@ export default function CreateInterview() {
             const formData = new FormData();
             formData.append("interview_title", jobTitle);
 
-            const createRes = await fetch("http://localhost:5000/create_interview", {
+            const createRes = await fetch("https://aiinterviewer-d7c7.onrender.com/create_interview", {
                 method: "POST",
                 body: formData,
                 credentials: "include"
@@ -37,7 +37,7 @@ export default function CreateInterview() {
             }
 
             // 2. Generate Questions
-            const genRes = await fetch("http://localhost:5000/generate_questions", {
+            const genRes = await fetch("https://aiinterviewer-d7c7.onrender.com/generate_questions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

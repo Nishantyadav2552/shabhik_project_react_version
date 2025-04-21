@@ -40,7 +40,7 @@ const UploadResume = () => {
 
         try {
             setUploading(true);
-            const response = await fetch("http://localhost:5000/resume_upload", {
+            const response = await fetch("https://aiinterviewer-d7c7.onrender.com/resume_upload", {
                 method: "POST",
                 body: formData,
                 credentials: "include"
