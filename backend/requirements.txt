@@ -11,3 +11,4 @@ pymupdf
 opencv-python
 mediapipe
 pillow
+flask_socketio
