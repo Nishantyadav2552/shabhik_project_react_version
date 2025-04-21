@@ -44,8 +44,6 @@ export default function CandidateDashboard() {
                 console.error("Error fetching dashboard:", err);
             }
         };
-    
-        fetchDashboardData();
 
         // inside useEffect:
         const fetchCandidateName = async () => {
@@ -62,7 +60,6 @@ export default function CandidateDashboard() {
                 console.error("Error fetching candidate name:", err);
             }
         };
-        fetchCandidateName();
 
         const fetchAvailableInterviews = async () => {
             try {
@@ -78,8 +75,13 @@ export default function CandidateDashboard() {
                 console.error("Error fetching available interviews:", err);
             }
         };
-        
-        fetchAvailableInterviews();
+
+        const init = async () => {
+            await fetchCandidateName();
+            await fetchDashboardData();
+            await fetchAvailableInterviews();
+        };
+        init();
 
     }, []);    
 

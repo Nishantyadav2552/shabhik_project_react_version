@@ -19,7 +19,6 @@ import mediapipe as mp
 from google.cloud import storage  
 from flask_cors import CORS
 
-
 app = Flask(__name__, template_folder="templates")
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.secret_key = "super_secret_key"
@@ -40,6 +39,12 @@ GCS_BUCKET_NAME = "interview-uploads"
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)  # Expires in 30 mins
 
 CORS(app, supports_credentials=True, origins=["https://frontend-avsq.onrender.com"])
+
+# ✅ Enable cross-origin cookie access
+app.config.update(
+    SESSION_COOKIE_SAMESITE="None",
+    SESSION_COOKIE_SECURE=True  # required for HTTPS (Render)
+)
 
 # 🔗 Connect Flask to MongoDB
 MONGO_URI = "mongodb+srv://123103054:TfUOHuLbpP5aONS6@cluster0.cssez.mongodb.net/interview_ai?retryWrites=true&w=majority&tls=true&tlsAllowInvalidCertificates=true"
